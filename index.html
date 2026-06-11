@@ -3,506 +3,339 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Grupo Tikal Cumbia Andina — La música que une raíces y corazones. Contrataciones y más." />
   <title>Grupo Tikal | Cumbia Andina</title>
-  <meta name="description" content="Grupo Tikal Cumbia Andina — Música en vivo para bodas, XV años, graduaciones y eventos corporativos en CDMX." />
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet" />
+  <!-- ===== FUENTES ===== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Raleway:wght@300;400;600;700&display=swap" rel="stylesheet" />
 
-  <!-- Estilos -->
+  <!-- ===== ICONOS DE REDES (SVG inline en CSS/JS, no dependencia externa) ===== -->
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-<!-- ═══════════════════════════════════
-     NAV
-     ═══════════════════════════════════ -->
-<nav>
-  <a class="nav-logo" href="#inicio">
-    <img src="img/logo.png" alt="Logo Grupo Tikal" onerror="this.style.display='none'" />
-    <div class="nav-logo-text">
-      Grupo Tikal
-      <em>Cumbia Andina</em>
-    </div>
-  </a>
-
-  <ul class="nav-links">
-    <li><a href="#sobre">Nosotros</a></li>
-    <li><a href="#galeria">Galería</a></li>
-    <li><a href="#videos">Videos</a></li>
-    <li><a href="#testimonios">Testimonios</a></li>
-    <li><a href="#paquetes">Paquetes</a></li>
-    <li><a href="#contacto">Contacto</a></li>
-  </ul>
-
-  <!-- Redes sociales con imágenes funcionales -->
-  <div class="nav-social">
-  <a href="https://www.facebook.com/yogaritmo/" target="_blank" class="nsoc-fb" title="Facebook">
-    <img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" alt="Facebook">
-  </a>
-  <a href="https://www.instagram.com/grupo_tikal_cumbia?igsh=NnNlMWZvN2Z3NTE0" target="_blank" class="nsoc-ig" title="Instagram">
-    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
-  </a>
-  <a href="https://www.tiktok.com/@grupo.tikal?_r=1&_t=ZS-95gVr7J0O6i" target="_blank" class="nsoc-tk" title="TikTok">
-    <img src="https://cdn-icons-png.flaticon.com/512/3046/3046126.png" alt="TikTok">
-  </a>
-  <a href="https://youtube.com/@grupotikalcumbiaandina?si=6h6h7pIKY9TeYj1D" target="_blank" class="nsoc-yt" title="YouTube">
-    <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube">
-  </a>
-  <a href="https://open.spotify.com/artist/3M0CzDeySg36Lhg3koHz3L?si=CWTZBXRxRZqugKVHh_c5FQ" target="_blank" class="nsoc-sp" title="Spotify">
-    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111624.png" alt="Spotify">
-  </a>
-</div>
-</nav>
+  <!-- ============================================================
+       NAVBAR — Logo + navegación principal
+  ============================================================ -->
+  <nav class="navbar" id="navbar">
+    <a href="#hero" class="nav-logo">
+      <img src="logo.png" alt="Grupo Tikal" />
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#artista">Artista</a></li>
+      <li><a href="#galeria">Galería</a></li>
+      <li><a href="#contacto">Contrataciones</a></li>
+    </ul>
+  </nav>
 
 
-<!-- ═══════════════════════════════════
-     HERO
-     ═══════════════════════════════════ -->
-<section id="inicio">
-  <!--
-    FOTO DE FONDO HERO:
-    Guarda tu foto en  img/hero.jpg  y ya aparece automáticamente.
-    (el CSS ya apunta a img/hero.jpg)
-    Si no hay foto, el gradiente verde/terracota queda de fondo.
-  -->
-  <div class="hero-bg"></div>
-  <div class="hero-deco"></div>
-  <div class="hero-content">
-    <span class="hero-badge">🇲🇽 Ciudad de México · Cumbia Andina</span>
-    <h1 class="hero-titulo">
-      <em>Grupo</em><br>Tikal
-    </h1>
-    <p class="hero-sub">
-      El ritmo andino que hace vibrar cada evento.<br>
-      Bodas, XV años, corporativos y más — ¡hacemos bailar a todos!
-    </p>
-    <div class="hero-btns">
-      <a href="#contacto" class="btn-primary">📞 Contrátanos</a>
-      <a href="#videos" class="btn-outline">▶ Ver Videos</a>
-    </div>
-  </div>
-  <div class="hero-scroll">Descubre más</div>
-</section>
+  <!-- ============================================================
+       HERO — Slider de fotos de conciertos + logo + botones de redes
+  ============================================================ -->
+  <section class="hero" id="hero">
 
-
-<!-- ═══════════════════════════════════
-     STATS
-     ═══════════════════════════════════ -->
-<div class="stats-bar andean-bg">
-  <div class="stat">
-    <div class="stat-num">+15</div>
-    <div class="stat-lbl">Años de experiencia</div>
-  </div>
-  <div class="stat">
-    <div class="stat-num">+500</div>
-    <div class="stat-lbl">Eventos realizados</div>
-  </div>
-  <div class="stat">
-    <div class="stat-num">3K</div>
-    <div class="stat-lbl">Fans en Facebook</div>
-  </div>
-  <div class="stat">
-    <div class="stat-num">100%</div>
-    <div class="stat-lbl">Clientes satisfechos</div>
-  </div>
-</div>
-
-<div class="divider"></div>
-
-
-<!-- ═══════════════════════════════════
-     SOBRE / NOSOTROS
-     ═══════════════════════════════════ -->
-<section id="sobre">
-  <div class="section-inner">
-    <div class="about-grid">
-      <div class="about-img">
-        <!--
-          FOTO "NOSOTROS":
-          Guarda tu foto en  img/sobre.jpg
-        -->
-        <img src="img/sobre.jpg"
-             alt="Grupo Tikal en vivo"
-             onerror="this.src='https://img.youtube.com/vi/MymuoS8MlVI/maxresdefault.jpg'" />
-      </div>
-      <div class="about-text">
-        <span class="section-tag">Quiénes somos</span>
-        <h2>La Cumbia Andina<br>que te <em>mueve el alma</em></h2>
-        <p>
-          Grupo Tikal es un conjunto musical originario de la Ciudad de México
-          especializado en Cumbia Andina. Con más de una década sobre los escenarios,
-          hemos llevado el sabor de los Andes a bodas, quinceañeras, fiestas patronales,
-          eventos corporativos y más.
-        </p>
-        <p>
-          Nuestro sonido fusiona el ritmo tropical colombiano con los vientos y melodías
-          del altiplano andino, creando una experiencia musical única que hace que
-          jóvenes y mayores bailen sin parar.
-        </p>
-        <ul class="check-list">
-          <li>Cumbia Andina, chicha y tropical en vivo</li>
-          <li>Músicos profesionales con amplia trayectoria</li>
-          <li>Equipo de sonido e iluminación incluido</li>
-          <li>Cobertura en toda la CDMX y área metropolitana</li>
-          <li>Disponibilidad para eventos en el interior de la república</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-
-<!-- ═══════════════════════════════════
-     GALERÍA
-     ═══════════════════════════════════ -->
-<section id="galeria">
-  <div class="section-inner">
-    <span class="section-tag">Galería</span>
-    <h2>Momentos <em style="color:var(--oro-cl)">inolvidables</em></h2>
-
-    <!--
-      ╔══════════════════════════════════════════╗
-      ║  CÓMO AGREGAR TUS FOTOS:                ║
-      ║  1. Guarda tus fotos en la carpeta img/ ║
-      ║  2. Reemplaza el src="img/foto-X.jpg"   ║
-      ║  3. Puedes agregar más <div class=       ║
-      ║     "gallery-item"> según necesites     ║
-      ╚══════════════════════════════════════════╝
-    -->
-    <div class="gallery-grid">
-
-      <div class="gallery-item tall">
-        <img src="img/foto-1.jpg" alt="Grupo Tikal"
-             onerror="this.src='https://img.youtube.com/vi/VY1HzayRlzY/maxresdefault.jpg'" />
-      </div>
-
-      <div class="gallery-item">
-        <img src="img/foto-2.jpg" alt="Grupo Tikal en concierto"
-             onerror="this.src='https://img.youtube.com/vi/8bLY8XNKBPw/maxresdefault.jpg'" />
-      </div>
-
-      <div class="gallery-item">
-        <img src="img/foto-3.jpg" alt="Grupo Tikal Cumbia Andina"
-             onerror="this.src='https://img.youtube.com/vi/MymuoS8MlVI/maxresdefault.jpg'" />
-      </div>
-
-      <div class="gallery-item">
-        <img src="img/foto-4.jpg" alt="Grupo Tikal en vivo"
-             onerror="this.src='https://img.youtube.com/vi/V-J3wOhiTx0/maxresdefault.jpg'" />
-      </div>
-
-      <div class="gallery-item">
-        <img src="img/foto-5.jpg" alt="Evento Grupo Tikal"
-             onerror="this.src='https://img.youtube.com/vi/8bLY8XNKBPw/sddefault.jpg'" />
-      </div>
-
-      <!-- Agrega más fotos aquí copiando el bloque de arriba -->
-
+    <!-- Slides de fondo -->
+    <div class="hero-slider" id="heroSlider">
+      <div class="hero-slide active" style="background-image: url('foto-1.jpg')"></div>
+      <div class="hero-slide" style="background-image: url('foto-2.jpg')"></div>
+      <div class="hero-slide" style="background-image: url('foto-3.jpg')"></div>
+      <div class="hero-slide" style="background-image: url('foto-4.jpg')"></div>
+      <div class="hero-slide" style="background-image: url('foto-5.jpg')"></div>
     </div>
 
-    <p style="text-align:center; color:rgba(247,240,227,.5); margin-top:1.5rem; font-size:.85rem;">
-      📷 Más fotos en nuestra
-      <a href="https://www.facebook.com/yogaritmo/" target="_blank" style="color:var(--oro-cl)">página de Facebook</a>
-    </p>
-  </div>
-</section>
+    <!-- Overlay oscuro sobre el slider -->
+    <div class="hero-overlay"></div>
 
-<div class="divider"></div>
+    <!-- Contenido central del hero -->
+    <div class="hero-content">
+      <img src="logo.png" alt="Grupo Tikal Cumbia Andina" class="hero-logo" />
+      <p class="hero-tagline">Cumbia Andina · México</p>
 
+      <!-- ===== BOTONES DE REDES SOCIALES (animados estilo dorado) ===== -->
+      <div class="social-buttons">
 
-<!-- ═══════════════════════════════════
-     VIDEOS
-     ═══════════════════════════════════ -->
-<section id="videos">
-  <div class="section-inner">
-    <span class="section-tag">Videos</span>
-    <h2>Escúchanos <em>en vivo</em></h2>
+        <a href="https://youtube.com/@grupotikalcumbiaandina?si=6h6h7pIKY9TeYj1D" target="_blank" rel="noopener" class="soc-btn soc-yt" title="YouTube">
+          <!-- Icono YouTube SVG -->
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          <span>YouTube</span>
+        </a>
 
-    <!--
-      ╔══════════════════════════════════════════════════════╗
-      ║  CÓMO AGREGAR TUS VIDEOS:                           ║
-      ║  1. Ve a YouTube, abre el video                     ║
-      ║  2. Clic en Compartir → Insertar                    ║
-      ║  3. Copia solo el ID del video (parte de la URL)    ║
-      ║     Ejemplo: youtube.com/watch?v=VY1HzayRlzY       ║
-      ║              el ID es: VY1HzayRlzY                  ║
-      ║  4. Reemplaza el ID en el src del iframe            ║
-      ╚══════════════════════════════════════════════════════╝
-    -->
-    <div class="videos-grid">
+        <a href="https://www.instagram.com/grupo_tikal_cumbia?igsh=NnNlMWZvN2Z3NTE0" target="_blank" rel="noopener" class="soc-btn soc-ig" title="Instagram">
+          <!-- Icono Instagram SVG -->
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+          <span>Instagram</span>
+        </a>
 
-      <div class="video-card">
-        <iframe src="https://www.youtube.com/embed/VY1HzayRlzY"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen loading="lazy"
-        title="Amor Regresa - Grupo Tikal"></iframe>
-        <div class="video-card-title">Amor Regresa</div>
-      </div>
+        <a href="https://www.tiktok.com/@grupo.tikal?_r=1&_t=ZS-95gVr7J0O6i" target="_blank" rel="noopener" class="soc-btn soc-tk" title="TikTok">
+          <!-- Icono TikTok SVG -->
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.32 6.32 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.77a4.85 4.85 0 0 1-1.01-.08z"/></svg>
+          <span>TikTok</span>
+        </a>
 
-      <div class="video-card">
-        <iframe src="https://www.youtube.com/embed/V-J3wOhiTx0"
-                allowfullscreen loading="lazy"
-                title="Rey de la Cumbia - Grupo Tikal"></iframe>
-        <div class="video-card-title">Rey de la Cumbia</div>
-      </div>
+        <a href="https://www.facebook.com/yogaritmo/" target="_blank" rel="noopener" class="soc-btn soc-fb" title="Facebook">
+          <!-- Icono Facebook SVG -->
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          <span>Facebook</span>
+        </a>
 
-      <div class="video-card">
-        <iframe src="https://www.youtube.com/embed/MymuoS8MlVI"
-                allowfullscreen loading="lazy"
-                title="Grupo Tikal en Titanio TV"></iframe>
-        <div class="video-card-title">Presentación en Titanio TV</div>
-      </div>
+        <a href="https://open.spotify.com/artist/3M0CzDeySg36Lhg3koHz3L?si=CWTZBXRxRZqugKVHh_c5FQ" target="_blank" rel="noopener" class="soc-btn soc-sp" title="Spotify">
+          <!-- Icono Spotify SVG -->
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+          <span>Spotify</span>
+        </a>
 
-      <!-- Agrega más videos aquí copiando el bloque de arriba -->
+        <a href="https://music.apple.com/mx/artist/grupo-tikal/1684618734" target="_blank" rel="noopener" class="soc-btn soc-am" title="Apple Music">
+          <!-- Icono Apple Music SVG -->
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.994 6.124a9.23 9.23 0 0 0-.24-2.19c-.317-1.31-1.048-2.31-2.07-3.03a5.022 5.022 0 0 0-1.78-.78c-.57-.12-1.15-.19-1.73-.2-.04-.001-4.512-.003-4.512-.003S9.15 0 9.15.003c-.58.01-1.16.08-1.73.2a5.022 5.022 0 0 0-1.78.78C4.618 1.724 3.887 2.724 3.57 4.034a9.23 9.23 0 0 0-.24 2.19C3.32 6.304 3.32 6.5 3.32 6.7v10.6c0 .2.01.396.01.576.05.82.23 1.63.56 2.39.35.84.9 1.56 1.62 2.1a5.39 5.39 0 0 0 2.1.88c.63.12 1.27.18 1.91.18H14.5c.64 0 1.28-.06 1.91-.18a5.39 5.39 0 0 0 2.1-.88c.72-.54 1.27-1.26 1.62-2.1.33-.76.51-1.57.56-2.39 0-.18.01-.376.01-.576V6.7c0-.2-.01-.396-.01-.576zM12 16.77c-2.64 0-4.77-2.13-4.77-4.77S9.36 7.23 12 7.23s4.77 2.13 4.77 4.77-2.13 4.77-4.77 4.77zm4.96-8.59a1.115 1.115 0 1 1 0-2.23 1.115 1.115 0 0 1 0 2.23zM12 9.05a2.95 2.95 0 1 0 0 5.9 2.95 2.95 0 0 0 0-5.9z"/></svg>
+          <span>Apple Music</span>
+        </a>
 
-    </div>
-  </div>
-</section>
+      </div><!-- /social-buttons -->
+    </div><!-- /hero-content -->
 
-<div class="divider"></div>
+    <!-- Indicadores del slider (puntos) -->
+    <div class="slider-dots" id="sliderDots"></div>
 
+    <!-- Flecha para scroll hacia abajo -->
+    <a href="#artista" class="hero-arrow" aria-label="Ver más">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+    </a>
 
-<!-- ═══════════════════════════════════
-     TESTIMONIOS
-     ═══════════════════════════════════ -->
-<section id="testimonios">
-  <div class="section-inner">
-    <span class="section-tag">Testimonios</span>
-    <h2>Lo que dicen<br>nuestros <em>clientes</em></h2>
-    <div class="testi-grid">
-
-      <div class="testi-card">
-        <div class="testi-stars">★★★★★</div>
-        <p class="testi-text">"¡Excelente grupo! Tocaron en la boda de mi hija y todo el mundo quedó encantado. El ritmo de la cumbia andina tiene algo especial que hace bailar a todos."</p>
-        <div class="testi-author">Rosa M. <span>— Boda en CDMX</span></div>
-      </div>
-
-      <div class="testi-card">
-        <div class="testi-stars">★★★★★</div>
-        <p class="testi-text">"Muy profesionales y puntuales. El sonido estuvo increíble y su repertorio es muy amplio. Los volvería a contratar sin pensarlo."</p>
-        <div class="testi-author">Carlos V. <span>— XV años en Toluca</span></div>
-      </div>
-
-      <div class="testi-card">
-        <div class="testi-stars">★★★★★</div>
-        <p class="testi-text">"Llenaron la pista de baile desde la primera canción. La cumbia andina es adictiva, ¡no podíamos parar de bailar! Totalmente recomendados."</p>
-        <div class="testi-author">Ana L. <span>— Evento corporativo</span></div>
-      </div>
-
-      <div class="testi-card">
-        <div class="testi-stars">★★★★★</div>
-        <p class="testi-text">"Lo mejor de la fiesta fue Grupo Tikal, eso ya lo digo sin dudarlo. Toda la familia quedó contenta, incluyendo los abuelitos que también se animaron a bailar."</p>
-        <div class="testi-author">Javier R. <span>— Cumpleaños familiar</span></div>
-      </div>
-
-      <div class="testi-card">
-        <div class="testi-stars">★★★★★</div>
-        <p class="testi-text">"Desde el primer contacto muy atentos y claros con los paquetes. El día del evento superaron todas las expectativas. ¡Gracias Grupo Tikal!"</p>
-        <div class="testi-author">Daniela S. <span>— Graduación</span></div>
-      </div>
-
-      <div class="testi-card">
-        <div class="testi-stars">★★★★★</div>
-        <p class="testi-text">"Sonido potente, músicos talentosos y un ambiente increíble. La cumbia andina que tocan tiene un sabor muy especial. 100% recomendados."</p>
-        <div class="testi-author">Miguel A. <span>— Fiesta patronal</span></div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
+  </section><!-- /hero -->
 
 
-<!-- ═══════════════════════════════════
-     PAQUETES
-     ═══════════════════════════════════ -->
-<section id="paquetes">
-  <div class="section-inner">
-    <span class="section-tag">Paquetes</span>
-    <h2 style="color:var(--crema)">Elige tu <em style="color:var(--oro-cl)">paquete</em></h2>
-    <div class="paquetes-grid">
+  <!-- ============================================================
+       ARTISTA + MÚSICA — David Aguilar + embed Spotify
+  ============================================================ -->
+  <section class="artista" id="artista">
+    <div class="artista-inner">
 
-      <div class="paquete-card">
-        <div class="paquete-icon">🎸</div>
-        <div class="paquete-nombre">Básico</div>
-        <p class="paquete-desc">Ideal para eventos pequeños e íntimos con toda la energía andina.</p>
-        <ul class="paquete-list">
-          <li>3 horas de música en vivo</li>
-          <li>Equipo de sonido básico</li>
-          <li>Hasta 4 músicos</li>
-          <li>Repertorio cumbia andina</li>
-        </ul>
-        <a href="#contacto" class="btn-primary" style="display:inline-block">Cotizar</a>
-      </div>
-
-      <div class="paquete-card destacado">
-        <div class="paquete-icon">🎺</div>
-        <div class="paquete-nombre">Premium</div>
-        <p class="paquete-desc">El favorito para bodas y XV años. ¡Todo incluido para que la fiesta sea perfecta!</p>
-        <ul class="paquete-list">
-          <li>5 horas de música en vivo</li>
-          <li>Sonido profesional e iluminación</li>
-          <li>Hasta 7 músicos</li>
-          <li>Repertorio completo (andino, tropical, pop)</li>
-          <li>Animación y conducción</li>
-        </ul>
-        <a href="#contacto" class="btn-primary" style="display:inline-block; background:var(--verde); color: var(--crema)">Cotizar</a>
-      </div>
-
-      <div class="paquete-card">
-        <div class="paquete-icon">🎻</div>
-        <div class="paquete-nombre">Corporativo</div>
-        <p class="paquete-desc">Diseñado a la medida para eventos de empresa, lanzamientos y celebraciones.</p>
-        <ul class="paquete-list">
-          <li>Horario personalizable</li>
-          <li>Producción completa</li>
-          <li>Set acústico o amplificado</li>
-          <li>Repertorio adaptado al evento</li>
-          <li>Cobertura foránea disponible</li>
-        </ul>
-        <a href="#contacto" class="btn-primary" style="display:inline-block">Cotizar</a>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-
-<!-- ═══════════════════════════════════
-     CONTACTO
-     ═══════════════════════════════════ -->
-<section id="contacto">
-  <div class="section-inner">
-    <div class="contacto-grid">
-
-      <!-- Info -->
-      <div class="contacto-info">
-        <span class="section-tag">Contacto</span>
-        <h2>¿Listo para<br><em>contratar?</em></h2>
-
-        <div class="info-item">
-          <div class="info-icon">📱</div>
-          <div class="info-text">
-            <strong>WhatsApp / Teléfono</strong>
-            <!-- Cambia el número aquí: wa.me/521 + número sin espacios -->
-            <a href="https://wa.me/521XXXXXXXXXX" target="_blank">+52 1 XXX XXX XXXX</a>
+      <!-- Columna izquierda: foto + bio -->
+      <div class="artista-bio">
+        <div class="artista-foto-wrap">
+          <img src="david-aguilar.jpg" alt="David Aguilar — Grupo Tikal" class="artista-foto" />
+          <div class="artista-foto-glow"></div>
+        </div>
+        <div class="artista-texto">
+          <span class="artista-eyebrow">Voz · Compositor · Productor</span>
+          <h2 class="artista-nombre">David Aguilar</h2>
+          <p class="artista-desc">
+            Nacido el 21 de marzo de 2002, David es el corazón creativo de Grupo Tikal.
+            Músico desde la infancia, cantautor y productor, combina su pasión por la cumbia andina
+            con sus estudios de Arquitectura en la UAM-X. Cada canción lleva su sello:
+            melodías que nacen del alma y letras que cuentan historias de la gente.
+          </p>
+          <div class="artista-tags">
+            <span>Cumbia Andina</span>
+            <span>Compositor</span>
+            <span>UAM-X</span>
           </div>
         </div>
-
-        <div class="info-item">
-          <div class="info-icon">📧</div>
-          <div class="info-text">
-            <strong>Correo electrónico</strong>
-            <a href="mailto:contacto@grupotikal.com">contacto@grupotikal.com</a>
-          </div>
-        </div>
-
-        <div class="info-item">
-          <div class="info-icon">📍</div>
-          <div class="info-text">
-            <strong>Ubicación</strong>
-            <span>Ciudad de México, CDMX</span>
-          </div>
-        </div>
-
-        <!-- Botones de redes sociales -->
-        <div class="social-row">
-          <a href="https://www.facebook.com/yogaritmo/" target="_blank" class="social-btn social-fb">f Facebook</a>
-          <a href="https://www.instagram.com/grupo_tikal_cumbia?igsh=NnNlMWZvN2Z3NTE0" target="_blank" class="social-btn social-ig">📷 Instagram</a>
-          <a href="https://www.tiktok.com/@grupo.tikal?_r=1&_t=ZS-95gVr7J0O6i" target="_blank" class="social-btn social-tk">♪ TikTok</a>
-          <a href="https://youtube.com/@grupotikalcumbiaandina?si=6h6h7pIKY9TeYj1D" target="_blank" class="social-btn social-yt">▶ YouTube</a>
-          <a href="https://open.spotify.com/artist/3M0CzDeySg36Lhg3koHz3L?si=CWTZBXRxRZqugKVHh_c5FQ" target="_blank" class="social-btn social-sp">🎵  Spotify</a>
-          <a href="https://wa.me/521XXXXXXXXXX" target="_blank" class="social-btn social-wa">✉ WhatsApp</a>
-        </div>
       </div>
 
-      <!-- Formulario -->
-      <div>
-        <span class="section-tag">Envíanos un mensaje</span>
-        <br><br>
-        <div class="contact-form">
-          <div class="form-2col">
-            <div class="form-group">
-              <label for="f-nombre">Tu nombre</label>
-              <input id="f-nombre" type="text" placeholder="Juan García" />
+      <!-- Columna derecha: embed Spotify -->
+      <div class="artista-spotify">
+        <span class="artista-eyebrow">Escúchanos</span>
+        <h3 class="spotify-titulo">Nuestra Música</h3>
+        <iframe
+          id="spotifyEmbed"
+          style="border-radius:12px"
+          src="https://open.spotify.com/embed/artist/3M0CzDeySg36Lhg3koHz3L?utm_source=generator&theme=0"
+          width="100%"
+          height="420"
+          frameborder="0"
+          allowfullscreen=""
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy"
+          title="Grupo Tikal en Spotify">
+        </iframe>
+      </div>
+
+    </div>
+  </section><!-- /artista -->
+
+
+  <!-- ============================================================
+       GALERÍA — Mosaico de fotos de conciertos
+  ============================================================ -->
+  <section class="galeria" id="galeria">
+    <div class="section-header">
+      <span class="section-eyebrow">En vivo</span>
+      <h2 class="section-title">Galería</h2>
+    </div>
+
+    <div class="galeria-grid">
+      <!-- Foto 1 — grande (ocupa 2 filas) -->
+      <div class="galeria-item tall" data-index="0">
+        <img src="foto-1.jpg" alt="Grupo Tikal en concierto" loading="lazy" />
+        <div class="galeria-overlay">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+        </div>
+      </div>
+      <!-- Foto 2 -->
+      <div class="galeria-item" data-index="1">
+        <img src="foto-2.jpg" alt="Grupo Tikal en concierto" loading="lazy" />
+        <div class="galeria-overlay">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+        </div>
+      </div>
+      <!-- Foto 3 -->
+      <div class="galeria-item" data-index="2">
+        <img src="foto-3.jpg" alt="Grupo Tikal en concierto" loading="lazy" />
+        <div class="galeria-overlay">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+        </div>
+      </div>
+      <!-- Foto 4 — grande (ocupa 2 columnas) -->
+      <div class="galeria-item wide" data-index="3">
+        <img src="foto-4.jpg" alt="Grupo Tikal en concierto" loading="lazy" />
+        <div class="galeria-overlay">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+        </div>
+      </div>
+      <!-- Foto 5 -->
+      <div class="galeria-item" data-index="4">
+        <img src="foto-5.jpg" alt="Grupo Tikal en concierto" loading="lazy" />
+        <div class="galeria-overlay">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- Lightbox para ver fotos en grande -->
+    <div class="lightbox" id="lightbox">
+      <button class="lightbox-close" id="lightboxClose" aria-label="Cerrar">&#x2715;</button>
+      <button class="lightbox-prev" id="lightboxPrev" aria-label="Anterior">&#8249;</button>
+      <img src="" alt="Foto ampliada" id="lightboxImg" />
+      <button class="lightbox-next" id="lightboxNext" aria-label="Siguiente">&#8250;</button>
+    </div>
+
+  </section><!-- /galeria -->
+
+
+  <!-- ============================================================
+       CONTACTO — Contrataciones
+  ============================================================ -->
+  <section class="contacto" id="contacto">
+    <div class="contacto-inner">
+
+      <div class="section-header">
+        <span class="section-eyebrow">Agenda tu evento</span>
+        <h2 class="section-title">Contrataciones</h2>
+        <p class="section-sub">¿Quieres a Grupo Tikal en tu evento? Escríbenos y con gusto te atendemos.</p>
+      </div>
+
+      <div class="contacto-content">
+
+        <!-- Datos de contacto -->
+        <div class="contacto-datos">
+          <div class="dato-item">
+            <!-- Icono teléfono -->
+            <div class="dato-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.39 2 2 0 0 1 3.58 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.73a16 16 0 0 0 6.29 6.29l1.12-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
             </div>
-            <div class="form-group">
-              <label for="f-tel">Teléfono</label>
-              <input id="f-tel" type="tel" placeholder="+52 55 1234 5678" />
+            <div class="dato-texto">
+              <span class="dato-label">Teléfono / WhatsApp</span>
+              <a href="tel:+525512345678" class="dato-valor">+52 55 1234 5678</a>
             </div>
+          </div>
+
+          <div class="dato-item">
+            <!-- Icono email -->
+            <div class="dato-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div class="dato-texto">
+              <span class="dato-label">Correo electrónico</span>
+              <a href="mailto:contacto@grupotikal.com" class="dato-valor">contacto@grupotikal.com</a>
+            </div>
+          </div>
+
+          <div class="dato-item">
+            <!-- Icono ubicación -->
+            <div class="dato-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div class="dato-texto">
+              <span class="dato-label">Ciudad</span>
+              <span class="dato-valor">Ciudad de México, México</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Formulario de contacto -->
+        <form class="contacto-form" id="contactoForm" novalidate>
+          <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" required />
           </div>
           <div class="form-group">
-            <label for="f-email">Correo electrónico</label>
-            <input id="f-email" type="email" placeholder="tu@correo.com" />
+            <label for="email">Correo electrónico</label>
+            <input type="email" id="email" name="email" placeholder="tu@correo.com" required />
           </div>
           <div class="form-group">
-            <label>Tipo de evento</label>
-            <select>
-              <option value="">— Selecciona —</option>
-              <option>Boda</option>
-              <option>XV años</option>
-              <option>Cumpleaños</option>
-              <option>Graduación</option>
-              <option>Evento corporativo</option>
-              <option>Fiesta patronal</option>
-              <option>Otro</option>
-            </select>
-          </div>
-          <div class="form-2col">
-            <div class="form-group">
-              <label>Fecha del evento</label>
-              <input type="date" />
-            </div>
-            <div class="form-group">
-              <label>Número de invitados aprox.</label>
-              <input type="number" placeholder="150" />
-            </div>
+            <label for="telefono">Teléfono</label>
+            <input type="tel" id="telefono" name="telefono" placeholder="+52 55 0000 0000" />
           </div>
           <div class="form-group">
-            <label>Mensaje</label>
-            <textarea placeholder="Cuéntanos más sobre tu evento, lugar, horario..."></textarea>
+            <label for="mensaje">Cuéntanos sobre tu evento</label>
+            <textarea id="mensaje" name="mensaje" rows="4" placeholder="Fecha, tipo de evento, lugar..." required></textarea>
           </div>
-          <button class="btn-send" id="btn-send">Enviar mensaje 🎶</button>
-        </div>
+          <button type="submit" class="btn-enviar">
+            <span>Enviar mensaje</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          </button>
+          <p class="form-success" id="formSuccess">¡Mensaje enviado! Te contactamos pronto.</p>
+        </form>
+
+      </div>
+    </div>
+  </section><!-- /contacto -->
+
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <img src="logo.png" alt="Grupo Tikal" class="footer-logo" />
+      <p class="footer-tagline">Cumbia Andina · Ciudad de México</p>
+
+      <!-- Redes sociales en el footer -->
+      <div class="footer-social">
+        <a href="https://youtube.com/@grupotikalcumbiaandina?si=6h6h7pIKY9TeYj1D" target="_blank" rel="noopener" aria-label="YouTube" class="footer-soc">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/grupo_tikal_cumbia?igsh=NnNlMWZvN2Z3NTE0" target="_blank" rel="noopener" aria-label="Instagram" class="footer-soc">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+        </a>
+        <a href="https://www.tiktok.com/@grupo.tikal?_r=1&_t=ZS-95gVr7J0O6i" target="_blank" rel="noopener" aria-label="TikTok" class="footer-soc">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.32 6.32 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.77a4.85 4.85 0 0 1-1.01-.08z"/></svg>
+        </a>
+        <a href="https://www.facebook.com/yogaritmo/" target="_blank" rel="noopener" aria-label="Facebook" class="footer-soc">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+        <a href="https://open.spotify.com/artist/3M0CzDeySg36Lhg3koHz3L?si=CWTZBXRxRZqugKVHh_c5FQ" target="_blank" rel="noopener" aria-label="Spotify" class="footer-soc">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+        </a>
+        <a href="https://music.apple.com/mx/artist/grupo-tikal/1684618734" target="_blank" rel="noopener" aria-label="Apple Music" class="footer-soc">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.994 6.124a9.23 9.23 0 0 0-.24-2.19c-.317-1.31-1.048-2.31-2.07-3.03a5.022 5.022 0 0 0-1.78-.78c-.57-.12-1.15-.19-1.73-.2-.04-.001-4.512-.003-4.512-.003S9.15 0 9.15.003c-.58.01-1.16.08-1.73.2a5.022 5.022 0 0 0-1.78.78C4.618 1.724 3.887 2.724 3.57 4.034a9.23 9.23 0 0 0-.24 2.19C3.32 6.304 3.32 6.5 3.32 6.7v10.6c0 .2.01.396.01.576.05.82.23 1.63.56 2.39.35.84.9 1.56 1.62 2.1a5.39 5.39 0 0 0 2.1.88c.63.12 1.27.18 1.91.18H14.5c.64 0 1.28-.06 1.91-.18a5.39 5.39 0 0 0 2.1-.88c.72-.54 1.27-1.26 1.62-2.1.33-.76.51-1.57.56-2.39 0-.18.01-.376.01-.576V6.7c0-.2-.01-.396-.01-.576zM12 16.77c-2.64 0-4.77-2.13-4.77-4.77S9.36 7.23 12 7.23s4.77 2.13 4.77 4.77-2.13 4.77-4.77 4.77zm4.96-8.59a1.115 1.115 0 1 1 0-2.23 1.115 1.115 0 0 1 0 2.23zM12 9.05a2.95 2.95 0 1 0 0 5.9 2.95 2.95 0 0 0 0-5.9z"/></svg>
+        </a>
       </div>
 
+      <p class="footer-copy">&copy; 2024 Grupo Tikal Cumbia Andina. Todos los derechos reservados.</p>
     </div>
-  </div>
-</section>
+  </footer>
 
 
-<!-- ═══════════════════════════════════
-     FOOTER
-     ═══════════════════════════════════ -->
-<footer>
-  <p>🎶 <strong>Grupo Tikal Cumbia Andina</strong> · Ciudad de México</p>
-  <p style="margin-top:.5rem;">© 2025 Grupo Tikal. Todos los derechos reservados.</p>
-  <p style="margin-top:.5rem;">
-    <a href="https://www.facebook.com/yogaritmo/" target="_blank">Facebook</a> ·
-    <a href="https://www.instagram.com/grupo_tikal_cumbia?igsh=NnNlMWZvN2Z3NTE0" target="_blank">Instagram</a> ·
-    <a href="https://www.tiktok.com/@grupo.tikal?_r=1&_t=ZS-95gVr7J0O6i" target="_blank">TikTok</a> ·
-    <a href="https://youtube.com/@grupotikalcumbiaandina?si=6h6h7pIKY9TeYj1D" target="_blank">YouTube</a> ·
-    <a href="https://open.spotify.com/artist/3M0CzDeySg36Lhg3koHz3L?si=CWTZBXRxRZqugKVHh_c5FQ" target="_blank">Spotify</a>
-  </p>
-</footer>
-
-
-<!-- ═══════════════════════════════════
-     LIGHTBOX
-     ═══════════════════════════════════ -->
-<div id="lightbox">
-  <span id="lb-close">✕</span>
-  <img id="lb-img" src="" alt="Foto Grupo Tikal" />
-</div>
-
-
-<!-- Script -->
-<script src="script.js"></script>
+  <!-- ============================================================
+       Scripts
+  ============================================================ -->
+  <script src="script.js"></script>
 </body>
 </html>
