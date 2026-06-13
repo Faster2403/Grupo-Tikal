@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ============================================================
      2. HERO SLIDER
-     — Cambia de foto automáticamente cada 5 segundos
+     — Cambia de foto automáticamente cada 4 segundos
      — Genera los puntos indicadores dinámicamente
      — Pausa en hover para mejor UX
   ============================================================ */
@@ -69,23 +69,28 @@ document.addEventListener('DOMContentLoaded', () => {
   const dots = document.querySelectorAll('.slider-dot');
 
   // Función para ir a un slide específico
-  function goToSlide(index) {
-    slides[currentSlide].classList.remove('active');
-    dots[currentSlide].classList.remove('active');
-    currentSlide = index;
-    slides[currentSlide].classList.add('active');
-    dots[currentSlide].classList.add('active');
-  }
+ function goToSlide(index) {
+  slides[currentSlide].classList.remove('active');
+  dots[currentSlide].classList.remove('active');
+  currentSlide = index;
 
+  // Forzar reinicio de animación
+  slides[currentSlide].style.animation = 'none';
+  slides[currentSlide].offsetHeight; // reflow
+  slides[currentSlide].style.animation = '';
+
+  slides[currentSlide].classList.add('active');
+  dots[currentSlide].classList.add('active');
+}
   // Función para avanzar al siguiente slide
   function nextSlide() {
     const next = (currentSlide + 1) % slides.length;
     goToSlide(next);
   }
 
-  // Iniciar rotación automática cada 5 segundos
+  // Iniciar rotación automática cada 4 segundos
   function startSlider() {
-    sliderTimer = setInterval(nextSlide, 5000);
+    sliderTimer = setInterval(nextSlide, 4000);
   }
 
   function stopSlider() {

@@ -76,7 +76,7 @@ a {
 
 /* Navbar con scroll — fondo oscuro */
 .navbar.scrolled {
-  background: rgba(7, 9, 31, 0.95);
+  background: rgba(7, 9, 31, 0.35);
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(8px);
 }
@@ -128,6 +128,40 @@ a {
 
 .nav-links a:hover::after {
   width: 100%;
+}
+
+/* Redes sociales en navbar */
+.nav-social {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-soc {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(245, 197, 24, 0.1);
+  border: 1px solid rgba(245, 197, 24, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--dorado);
+  transition: all var(--transition);
+  flex-shrink: 0;
+}
+
+.nav-soc svg {
+  width: 16px;
+  height: 16px;
+}
+
+.nav-soc:hover {
+  background: var(--dorado);
+  color: var(--negro);
+  border-color: var(--dorado);
+  transform: translateY(-2px) scale(1.1);
+  box-shadow: 0 0 14px rgba(245, 197, 24, 0.6);
 }
 
 /* Botón hamburguesa (mobile) */
@@ -1025,6 +1059,11 @@ a.dato-valor:hover {
   /* Navbar: menú hamburguesa */
   .nav-toggle {
     display: flex;
+  }
+
+  /* Ocultar redes del navbar en mobile (ya están en el hero) */
+  .nav-social {
+    display: none;
   }
 
   .nav-links {
