@@ -40,78 +40,57 @@ document.addEventListener('DOMContentLoaded', () => {
   const slides   = document.querySelectorAll('.hero-slide');
   const dotsWrap = document.getElementById('sliderDots');
   let currentSlide = 0;
-  let sliderTimer  = null;
 
-  slides.forEach((_, i) => {
-    const dot = document.createElement('button');
-    dot.classList.add('slider-dot');
-    dot.setAttribute('aria-label', `Foto ${i + 1}`);
-    if (i === 0) dot.classList.add('active');
-    dot.addEventListener('click', () => goToSlide(i));
-    dotsWrap.appendChild(dot);
-  });
+  if(slides.length > 0 && dotsWrap) {
+    slides.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.classList.add('slider-dot');
+      if(i === 0) dot.classList.add('active');
+      dot.setAttribute('aria-label', `Foto ${i + 1}`);
+      dot.addEventListener('click', () => changeSlide(i));
+      dotsWrap.appendChild(dot);
+    });
 
-  const dots = document.querySelectorAll('.slider-dot');
+    const dots = dotsWrap.querySelectorAll('.slider-dot');
 
-  function goToSlide(index) {
-    slides[currentSlide].classList.remove('active');
-    dots[currentSlide].classList.remove('active');
-    currentSlide = index;
-    slides[currentSlide].classList.add('active');
-    dots[currentSlide].classList.add('active');
+    function changeSlide(index) {
+      slides[currentSlide].classList.remove('active');
+      dots[currentSlide].classList.remove('active');
+      currentSlide = index;
+      slides[currentSlide].classList.add('active');
+      dots[currentSlide].classList.add('active');
+    }
+
+    setInterval(() => {
+      let next = (currentSlide + 1) % slides.length;
+      changeSlide(next);
+    }, 5000);
   }
-
-  function nextSlide() {
-    goToSlide((currentSlide + 1) % slides.length);
-  }
-
-  function startSlider() {
-    clearInterval(sliderTimer);
-    sliderTimer = setInterval(nextSlide, 4000);
-  }
-
-  function stopSlider() {
-    clearInterval(sliderTimer);
-  }
-
-  startSlider();
-
-  const heroSection = document.querySelector('.hero');
-  heroSection.addEventListener('mouseenter', stopSlider);
-  heroSection.addEventListener('mouseleave', startSlider);
 
 
   /* ============================================================
      3. GALERÍA LIGHTBOX
   ============================================================ */
-  const lightbox      = document.getElementById('lightbox');
-  const lightboxImg   = document.getElementById('lightboxImg');
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
   const lightboxClose = document.getElementById('lightboxClose');
-  const lightboxPrev  = document.getElementById('lightboxPrev');
-  const lightboxNext  = document.getElementById('lightboxNext');
+  const lightboxPrev = document.getElementById('lightboxPrev');
+  const lightboxNext = document.getElementById('lightboxNext');
+  const galeriaItems = document.querySelectorAll('.galeria-item img');
+  
+  let currentPhoto = 0;
+  const galeriaImgs = Array.from(galeriaItems).map(img => img.src);
 
-  const galeriaItems = document.querySelectorAll('.galeria-item');
-  const galeriaImgs  = Array.from(galeriaItems).map(item => item.querySelector('img').src);
-  let currentPhoto   = 0;
-
-  galeriaItems.forEach((item, i) => {
+  document.querySelectorAll('.galeria-item').forEach(item => {
     item.addEventListener('click', () => {
-      currentPhoto = i;
-      openLightbox(i);
+      currentPhoto = parseInt(item.getAttribute('data-index')) || 0;
+      lightboxImg.src = galeriaImgs[currentPhoto];
+      lightbox.classList.add('open');
     });
   });
 
-  function openLightbox(index) {
-    lightboxImg.src = galeriaImgs[index];
-    lightboxImg.alt = `Foto de concierto ${index + 1}`;
-    lightbox.classList.add('open');
-    document.body.style.overflow = 'hidden';
-  }
-
   function closeLightbox() {
     lightbox.classList.remove('open');
-    document.body.style.overflow = '';
-    setTimeout(() => { lightboxImg.src = ''; }, 300);
   }
 
   function showPrev() {
@@ -124,61 +103,33 @@ document.addEventListener('DOMContentLoaded', () => {
     lightboxImg.src = galeriaImgs[currentPhoto];
   }
 
-  lightboxClose.addEventListener('click', closeLightbox);
-  lightboxPrev.addEventListener('click', showPrev);
-  lightboxNext.addEventListener('click', showNext);
+  if(lightboxClose && lightboxPrev && lightboxNext) {
+    lightboxClose.addEventListener('click', closeLightbox);
+    lightboxPrev.addEventListener('click', showPrev);
+    lightboxNext.addEventListener('click', showNext);
 
-  lightbox.addEventListener('click', (e) => {
-    if (e.target === lightbox) closeLightbox();
-  });
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
 
-  document.addEventListener('keydown', (e) => {
-    if (!lightbox.classList.contains('open')) return;
-    if (e.key === 'Escape')     closeLightbox();
-    if (e.key === 'ArrowLeft')  showPrev();
-    if (e.key === 'ArrowRight') showNext();
-  });
+    document.addEventListener('keydown', (e) => {
+      if (!lightbox.classList.contains('open')) return;
+      if (e.key === 'Escape')     closeLightbox();
+      if (e.key === 'ArrowLeft')  showPrev();
+      if (e.key === 'ArrowRight') showNext();
+    });
+  }
 
 
   /* ============================================================
      4. FORMULARIO DE CONTACTO
   ============================================================ */
-  const contactoForm = document.getElementById('contactoForm');
-  const formSuccess  = document.getElementById('formSuccess');
-
-  if (contactoForm) {
-    contactoForm.addEventListener('submit', (e) => {
+  const form = document.getElementById('contactoForm');
+  if(form) {
+    form.addEventListener('submit', (e) => {
       e.preventDefault();
-
-      const nombre  = contactoForm.querySelector('#nombre').value.trim();
-      const email   = contactoForm.querySelector('#email').value.trim();
-      const mensaje = contactoForm.querySelector('#mensaje').value.trim();
-
-      if (!nombre || !email || !mensaje) {
-        contactoForm.querySelectorAll('[required]').forEach(field => {
-          if (!field.value.trim()) {
-            field.style.borderColor = 'var(--naranja)';
-            field.style.boxShadow   = '0 0 8px rgba(232, 77, 14, 0.3)';
-            field.addEventListener('input', () => {
-              field.style.borderColor = '';
-              field.style.boxShadow   = '';
-            }, { once: true });
-          }
-        });
-        return;
-      }
-
-      const btnEnviar = contactoForm.querySelector('.btn-enviar');
-      btnEnviar.textContent = 'Enviando...';
-      btnEnviar.disabled    = true;
-
-      setTimeout(() => {
-        contactoForm.reset();
-        btnEnviar.innerHTML = '<span>Enviar mensaje</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>';
-        btnEnviar.disabled  = false;
-        formSuccess.classList.add('visible');
-        setTimeout(() => formSuccess.classList.remove('visible'), 5000);
-      }, 1000);
+      alert('¡Gracias por tu mensaje! Nos pondremos en contacto contigo muy pronto.');
+      form.reset();
     });
   }
 
@@ -190,7 +141,6 @@ document.addEventListener('DOMContentLoaded', () => {
     '.artista-bio',
     '.artista-spotify',
     '.galeria-item',
-    '.dato-item',
     '.contacto-form',
     '.section-header',
   ];
@@ -198,7 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
   revealTargets.forEach(selector => {
     document.querySelectorAll(selector).forEach((el, i) => {
       el.classList.add('reveal');
-      el.style.transitionDelay = `${i * 0.1}s`;
+      el.style.transitionDelay = `${i * 0.05}s`;
     });
   });
 
@@ -209,8 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  }, { threshold: 0.1 });
 
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-}); // fin DOMContentLoaded
+});

@@ -76,9 +76,9 @@ a {
 
 /* Navbar con scroll — fondo oscuro */
 .navbar.scrolled {
-  background: rgba(7, 9, 31, 0.35);
-  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(8px);
+  background: rgba(7, 9, 31, 0.92); /* <-- Cambiado a 0.92 (92% opaco) */
+  padding: 0.6rem 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Opcional: Un sombreado un poco más marcado */
 }
 
 .nav-logo img {
