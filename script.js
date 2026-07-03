@@ -160,6 +160,8 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }, { threshold: 0.1 });
+  
+  document.getElementById('footerYear').textContent = new Date().getFullYear();
 
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 });
