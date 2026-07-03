@@ -37,6 +37,9 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ============================================================
      2. HERO SLIDER
   ============================================================ */
+/* ============================================================
+     2. HERO SLIDER
+  ============================================================ */
   const slides   = document.querySelectorAll('.hero-slide');
   const dotsWrap = document.getElementById('sliderDots');
   let currentSlide = 0;
@@ -53,20 +56,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const dots = dotsWrap.querySelectorAll('.slider-dot');
 
+    // Carga la imagen de fondo de un slide solo si aún no se ha cargado
+    function loadSlide(index) {
+      const slide = slides[index];
+      if (slide.dataset.bg && !slide.style.backgroundImage) {
+        slide.style.backgroundImage = `url('${slide.dataset.bg}')`;
+      }
+    }
+
     function changeSlide(index) {
       slides[currentSlide].classList.remove('active');
       dots[currentSlide].classList.remove('active');
       currentSlide = index;
+      loadSlide(currentSlide);
       slides[currentSlide].classList.add('active');
       dots[currentSlide].classList.add('active');
+
+      // Precarga la siguiente foto mientras se ve la actual,
+      // para que el cambio sea instantáneo cuando le toque
+      const nextIndex = (currentSlide + 1) % slides.length;
+      loadSlide(nextIndex);
     }
+
+    // Precarga la segunda foto desde el inicio para la primera transición
+    loadSlide(1);
 
     setInterval(() => {
       let next = (currentSlide + 1) % slides.length;
       changeSlide(next);
     }, 5000);
   }
-
 
   /* ============================================================
      3. GALERÍA LIGHTBOX
