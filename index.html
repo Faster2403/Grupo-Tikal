@@ -2,13 +2,18 @@
 <html lang="es">
 <head>
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-1L065KEBP2"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-1L065KEBP2');
+
+  window.addEventListener('load', function() {
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-1L065KEBP2';
+    document.head.appendChild(s);
+  });
 </script>
   <!-- Sitio web desarrollado por Faustino Díaz Vega -->
    <!-- Meta tags para SEO y redes sociales -->
@@ -116,7 +121,7 @@
 
     <!-- Contenido central del hero -->
     <div class="hero-content">
-      <img src="img/logo-hero.webp" alt="Grupo Tikal Cumbia Andina" class="hero-logo" />
+      <img src="img/logo-hero.webp" width="600" height="600" alt="Grupo Tikal Cumbia Andina" class="hero-logo" />
       <p class="hero-tagline">Cumbia Andina · México</p>
 
       <!-- ===== BOTONES DE REDES SOCIALES (animados estilo dorado) ===== -->
@@ -182,7 +187,7 @@
       <!-- Columna izquierda: foto + bio -->
       <div class="artista-bio">
         <div class="artista-foto-wrap">
-          <img src="img/grupo-completo.webp" alt="Grupo Tikal" class="artista-foto" />
+          <img src="img/grupo-completo.webp" width="742" height="960" alt="Grupo Tikal" class="artista-foto" />
           <div class="artista-foto-glow"></div>
         </div>
         <div class="artista-texto">
@@ -354,7 +359,7 @@
   ============================================================ -->
   <footer class="footer">
     <div class="footer-inner">
-      <img src="img/logo-navbar-Foter.webp" alt="Grupo Tikal" class="footer-logo" />
+      <img src="img/logo-navbar-Foter.webp" width="160" height="160" alt="Grupo Tikal" class="footer-logo" />
       <p class="footer-tagline">Cumbia Andina · Ciudad de México</p>
 
       <!-- Redes sociales en el footer -->
